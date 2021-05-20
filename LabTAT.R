@@ -1,0 +1,22 @@
+###LABTAT#####
+lab=read.csv(choose.files())
+View(lab)
+attach(lab)
+colnames(lab)=c("lab1","lab2","lab3","lab4")
+View(lab)
+attach(lab)
+summary(lab$lab1)
+summary(lab$lab2)
+summary(lab$lab3)
+summary(lab$lab4)
+shapiro.test(lab1)
+shapiro.test(lab2)
+shapiro.test(lab3)
+shapiro.test(lab4)
+stack1=stack(lab)
+attach(stack1)
+?bartlett.test
+bartlett.test(values~ind,data=stack1)
+anova_test=aov(values~ind,data=stack1)
+summary(anova_test)
+##hence accept the null hypothesis as mean are not equal###
